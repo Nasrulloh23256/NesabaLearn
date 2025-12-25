@@ -79,9 +79,9 @@ export default function Login() {
   return (
     <div
       data-theme={theme}
-      className="min-h-screen flex flex-col md:flex-row font-poppins bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 relative"
+      className="min-h-screen flex flex-col md:flex-row font-poppins bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 relative pt-16 sm:pt-20 md:pt-0"
     >
-      <div className="absolute right-6 top-6 z-20 flex items-center gap-2">
+      <div className="absolute right-3 top-2 z-20 flex items-center gap-2 sm:right-4 sm:top-4 md:right-6 md:top-6">
         <button
           type="button"
           onClick={toggleLanguage}
@@ -151,15 +151,15 @@ export default function Login() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-white dark:bg-gray-900 w-full md:w-1/2 flex items-center justify-center p-8"
+        className="bg-white dark:bg-gray-900 w-full md:w-1/2 flex items-center justify-center p-6 sm:p-8"
       >
         <div className="w-full max-w-md">
           {/* Header Form */}
           <div className="mb-8 text-center">
-  <h1 className="text-2xl font-bold bg-gradient-to-r from-[#04BBFD] to-[#FB00FF] bg-clip-text text-transparent">
+  <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#04BBFD] to-[#FB00FF] bg-clip-text text-transparent">
     {authCopy.title}
   </h1>
-            <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 sm:text-base">
               {authCopy.subtitle}
             </p>
           </div>

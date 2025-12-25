@@ -75,6 +75,7 @@ export default function MeetingDetailPage() {
   const endTime = meeting?.end_time ?? meeting?.end;
   const task = meeting?.task || null;
   const assignments = Array.isArray(meeting?.assignments) ? meeting.assignments : [];
+  const attendanceRecords = Array.isArray(meeting?.attendances) ? meeting.attendances : [];
   const taskTypeLabel =
     task?.type === "content" ? (language === "en" ? "Content" : "Konten") : task ? "File" : "-";
   const taskFileHref =
@@ -435,8 +436,34 @@ export default function MeetingDetailPage() {
         <section className={`${infoCardClass}`}>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{meetingDetail.attendanceTitle}</h2>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            {meeting?.attendances?.length ? `${meeting.attendances.length} peserta hadir.` : meetingDetail.noAttendance}
+            {attendanceRecords.length ? `${attendanceRecords.length} peserta hadir.` : meetingDetail.noAttendance}
           </p>
+          {attendanceRecords.length ? (
+            <ul className="mt-4 space-y-3">
+              {attendanceRecords.map((entry) => (
+                <li
+                  key={entry.id}
+                  className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700 dark:border-slate-700 dark:text-slate-200"
+                >
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={resolveAvatar(entry.user?.avatar_url || entry.user?.avatar)}
+                      alt={entry.user?.name || "User"}
+                      className="h-10 w-10 rounded-full object-cover border border-slate-200 dark:border-slate-700"
+                    />
+                    <div>
+                      <p className="text-base font-semibold text-slate-900 dark:text-slate-100">
+                        {entry.user?.name || entry.user?.email || "User"}
+                      </p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {formatDateTime(entry.checked_in_at, locale)}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </section>
 
         <section className={`${infoCardClass}`}>

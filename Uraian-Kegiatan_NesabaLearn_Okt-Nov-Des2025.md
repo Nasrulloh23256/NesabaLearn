@@ -100,7 +100,7 @@ Bukti Kegiatan: file: app/Http/Controllers/User/MeetingController.php
 Tanggal: 22 Oktober 2025
 Waktu Kegiatan: 540 menit
 Uraian: Menambahkan model quiz, question, option, validasi pilihan ganda, serta penyimpanan struktur soal.
-Bukti Kegiatan: file: app/Http/Controllers/Admin/MeetingQuizController.php, app/Models/Quiz.php
+Bukti Kegiatan: file: app/Http/Controllers/Admin/MeetingQuizController.php, app/Models/ 
 
 17. Judul: UI pembuatan quiz di admin
 Tanggal: 23 Oktober 2025
@@ -194,7 +194,7 @@ Waktu Kegiatan: 540 menit
 Uraian: Implementasi upload avatar ke database, update akun, dan tampil di topbar serta list aktivitas.
 Bukti Kegiatan: file: app/Http/Controllers/AccountProfileController.php, resources/js/Pages/Admin/Profile.jsx
 
-32. Judul: Perbaikan UI sidebar dan responsivitas
+32. Judul: Perbaikan UI sidebar dan responsivitas     pppppppppp
 Tanggal: 14 November 2025
 Waktu Kegiatan: 540 menit
 Uraian: Menyesuaikan layout sidebar, ikon, dan breakpoint agar tampilan konsisten di mobile dan desktop.
